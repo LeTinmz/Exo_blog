@@ -27,6 +27,10 @@ function App() {
     };
     fetchData();
   }, []);
+
+  const deletePost = (postId) => {
+    setPosts((prev) => prev.filter((post) => post.id !== postId));
+  };
   return (
     <>
       <Routes>
@@ -42,7 +46,7 @@ function App() {
           ></Route>
           <Route
             path="posts/:id"
-            element={<PostDetailPage posts={posts} />}
+            element={<PostDetailPage posts={posts} onDelete={deletePost} />}
           ></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Route>
