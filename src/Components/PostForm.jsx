@@ -21,9 +21,9 @@ export const PostForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input ref={titleRef} placeholder="écris fdp" />
-      <textarea ref={contentRef} placeholder="écris fdp" />
-      <button type="submit">créer ton post de fdp</button>
+      <input ref={titleRef} placeholder="titre " />
+      <textarea ref={contentRef} placeholder="contenu" />
+      <button type="submit">créer</button>
     </form>
   );
 };
