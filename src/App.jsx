@@ -35,7 +35,10 @@ function App() {
     <>
       <Routes>
         <Route element={<Navigation />}>
-          <Route index element={<PostPage posts={posts} />}></Route>
+          <Route
+            index
+            element={isLoading ? <p>Loading...</p> : <PostPage posts={posts} />}
+          ></Route>
           <Route
             path={"postForm"}
             element={
