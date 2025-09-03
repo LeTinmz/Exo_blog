@@ -9,6 +9,7 @@ import { Route, Routes, NavLink, Outlet } from "react-router-dom";
 import { NotFound } from "./Components/NotFound";
 import { PostForm } from "./Components/PostForm";
 import { CreatePostPage } from "./Pages/CreatePostPage";
+import { PostDetailPage } from "./Pages/PostDetailPage";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState([]);
@@ -38,6 +39,10 @@ function App() {
                 onSubmit={(post) => setPosts((prev) => [...prev, post])}
               />
             }
+          ></Route>
+          <Route
+            path="posts/:id"
+            element={<PostDetailPage posts={posts} />}
           ></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Route>
